@@ -13,6 +13,11 @@
 		9F437D2920234E3A00E4E823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F437D2720234E3A00E4E823 /* LaunchScreen.storyboard */; };
 		9F437D3120234E7F00E4E823 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9F437D3020234E7F00E4E823 /* .gitignore */; };
 		9F437D3920234F5A00E4E823 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D3820234F5A00E4E823 /* HomeViewController.swift */; };
+		9F437D3B2023693000E4E823 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D3A2023693000E4E823 /* Game.swift */; };
+		9F437D3D20236B8C00E4E823 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D3C20236B8C00E4E823 /* Category.swift */; };
+		9F437D3F20236CFE00E4E823 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D3E20236CFE00E4E823 /* Feed.swift */; };
+		9F437D4120236DFD00E4E823 /* NetworkCommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D4020236DFD00E4E823 /* NetworkCommunicationManager.swift */; };
+		9F437D432023713400E4E823 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D422023713400E4E823 /* EndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		9F437D2A20234E3A00E4E823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F437D3020234E7F00E4E823 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9F437D3820234F5A00E4E823 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9F437D3A2023693000E4E823 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9F437D3C20236B8C00E4E823 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9F437D3E20236CFE00E4E823 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		9F437D4020236DFD00E4E823 /* NetworkCommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCommunicationManager.swift; sourceTree = "<group>"; };
+		9F437D422023713400E4E823 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,11 @@
 		9F437D3420234EC300E4E823 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F437D3E20236CFE00E4E823 /* Feed.swift */,
+				9F437D3C20236B8C00E4E823 /* Category.swift */,
+				9F437D3A2023693000E4E823 /* Game.swift */,
+				9F437D422023713400E4E823 /* EndPoints.swift */,
+				9F437D4020236DFD00E4E823 /* NetworkCommunicationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,7 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F437D1F20234E3A00E4E823 /* AppDelegate.swift in Sources */,
+				9F437D3F20236CFE00E4E823 /* Feed.swift in Sources */,
+				9F437D3B2023693000E4E823 /* Game.swift in Sources */,
+				9F437D432023713400E4E823 /* EndPoints.swift in Sources */,
 				9F437D3920234F5A00E4E823 /* HomeViewController.swift in Sources */,
+				9F437D3D20236B8C00E4E823 /* Category.swift in Sources */,
+				9F437D4120236DFD00E4E823 /* NetworkCommunicationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -314,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
