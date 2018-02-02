@@ -12,12 +12,14 @@ struct GameCategory: Codable {
     let categoryId:Int
     let name:String
     let definition:String
+    let displayOrder:Int
     let games:[Game]
     
     enum CodingKeys: String, CodingKey {
         case categoryId = "category_id"
         case name = "name"
         case definition = "description"
+        case displayOrder = "display_order"
         case games
     }
     
@@ -30,6 +32,7 @@ struct GameCategory: Codable {
         self.categoryId = try container.decode(Int.self, forKey: .categoryId)
         self.name = try container.decode(String.self, forKey: .name)
         self.definition = try container.decode(String.self, forKey: .definition)
+        self.displayOrder = try container.decode(Int.self, forKey: .displayOrder)
         self.games = try container.decode([Game].self, forKey: .games)
     }
 }

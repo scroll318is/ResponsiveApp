@@ -85,7 +85,7 @@ class NetworkCommunicationManager {
                 completion(image, error)
             }
         }
-        
+        print(url.absoluteURL)
         let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
             guard error == nil else {
                 _completion(nil, error)

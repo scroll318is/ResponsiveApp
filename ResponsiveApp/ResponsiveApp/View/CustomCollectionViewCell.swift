@@ -16,6 +16,11 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     private var game:Game!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        playNow.isHidden = true
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.name.text = ""

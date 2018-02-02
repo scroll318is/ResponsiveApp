@@ -23,13 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ikR-pB-Boa">
-                                <rect key="frame" x="16" y="20" width="343" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcR-Nb-MmZ">
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,11 +82,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ikR-pB-Boa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7Gt-5x-E31"/>
-                            <constraint firstItem="ikR-pB-Boa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IzJ-it-4sG"/>
                             <constraint firstItem="NcR-Nb-MmZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ky8-It-8kU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ikR-pB-Boa" secondAttribute="trailing" constant="16" id="T0i-XO-IcP"/>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="top" secondItem="ikR-pB-Boa" secondAttribute="bottom" constant="22" id="fea-Qk-1Ze"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="VK3-qY-Uhd"/>
                             <constraint firstItem="NcR-Nb-MmZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wmV-dT-x0E"/>
                             <constraint firstItem="NcR-Nb-MmZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yLW-XZ-p4Q"/>
                         </constraints>
