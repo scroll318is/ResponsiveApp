@@ -13,11 +13,13 @@ struct Feed: Codable {
     let name:String
     let definition:String
     let platform:String
+    let categories:[GameCategory]
     
     enum CodingKeys:String, CodingKey {
         case feedID = "id"
         case name = "name"
         case definition = "description"
         case platform = "platform"
+        case categories = "category"
     }
 }

@@ -14,10 +14,11 @@ typealias CompletionErrorHandler = (_ error:Error) -> Void
 enum NetworkError: Error {
     case statusCodeError(String)
     case noDataError
+    case jsonDecodingError(Error)
 }
 
 private struct Response: Codable {
-    let categories: [GameCategory]?
+    let feed:Feed?
 }
 
 class NetworkCommunicationManager {
@@ -50,11 +51,15 @@ class NetworkCommunicationManager {
                 return
             }
             
-            _ = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String:AnyObject]
-           // print(json)
-            
-            let categories = try? JSONDecoder().decode(Response.self, from: data).categories as? [GameCategory]
-            print(categories)
+            do {
+                if let feed = try JSONDecoder().decode(Response.self, from: data).feed {
+                    completionSuccess(feed)
+                } else {
+                    completionError(NetworkError.noDataError)
+                }
+             } catch let error {
+                completionError(NetworkError.jsonDecodingError(error))
+             }
             
         }
         task.resume()

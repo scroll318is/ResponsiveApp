@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         NetworkCommunicationManager.shared.fetchFeed(completionSuccess: { feed in
-            
+            print(feed)
         }) { error in
             
             if let error = error as? NetworkError {
@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("No Data")
                 case .statusCodeError(let message):
                     print(message)
+                case .jsonDecodingError(let error):
+                    print("JsonDecodingError:\(error.localizedDescription)")
                 }
             } else {
                 print(error.localizedDescription)
