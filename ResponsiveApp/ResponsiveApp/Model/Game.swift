@@ -21,3 +21,9 @@ struct Game:Codable {
         case displayOrder = "display_order"
     }
 }
+
+extension Game {
+    var imageUrl:URL? {
+        return EndPoints.getImageUrl(size: .medium, gameCode: gameCode)
+    }
+}

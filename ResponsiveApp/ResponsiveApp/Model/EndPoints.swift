@@ -35,7 +35,7 @@ extension EndPoints {
     }
     
     public static func getImageUrl(size:EndPoints.Images.Size, gameCode:String) -> URL? {
-        let urlString = EndPoints.Images.baseUrl + size.rawValue + EndPoints.Images.ResourceType.jpg.rawValue
+        let urlString = EndPoints.Images.baseUrl + size.rawValue + gameCode + EndPoints.Images.ResourceType.jpg.rawValue
         return URL(string:urlString)
     }
     
