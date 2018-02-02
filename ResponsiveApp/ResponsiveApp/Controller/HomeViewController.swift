@@ -10,21 +10,29 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: - Overrides
+    // MARK: - Constants
+    private let kCellId = "Cell"
+    private let kInitialSegmentSelectedIdnex = 0
+    
+    // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     private var segmentControl: UISegmentedControl?
     private var feed:Feed? {
         didSet {
-            collectionView.reloadData()
-            loadSegmentControl()
-            applySegmentControlConstraints()
+            if let feed = feed {
+                loadSegmentControl()
+                applySegmentControlConstraints()
+                currentCategory = feed.categories[segmentControl!.selectedSegmentIndex]
+            }
         }
     }
-    
-    // MARK: - Constants
-    private let kCellId = "Cell"
+    private var currentCategory:GameCategory? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -56,6 +64,7 @@ class HomeViewController: UIViewController {
         segmentControl?.addTarget(self, action: #selector(onSegmentControlValueChange), for: .valueChanged)
         segmentControl?.backgroundColor = .white
         segmentControl?.tintColor = .purple
+        segmentControl?.selectedSegmentIndex = kInitialSegmentSelectedIdnex
         self.view.addSubview(segmentControl!)
         applySegmentControlConstraints()
     }
@@ -81,7 +90,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func onSegmentControlValueChange() {
-        print(segmentControl!.selectedSegmentIndex)
+        if let feed = feed {
+            currentCategory = feed.categories[segmentControl!.selectedSegmentIndex]
+        }
     }
 }
 
@@ -92,13 +103,13 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feed?.categories[0].games.count ?? 0
+        return currentCategory?.games.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! CustomCollectionViewCell
-        let game = feed?.categories[0].games[indexPath.item]
-        cell.configure(game: game!)
+        let game = currentCategory!.games[indexPath.item]
+        cell.configure(game: game)
         return cell
     }
 }

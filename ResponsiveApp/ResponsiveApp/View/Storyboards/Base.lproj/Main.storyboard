@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcR-Nb-MmZ">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="16" y="94" width="343" height="684"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npJ-Cs-APE">
                                     <size key="itemSize" width="169" height="155"/>
@@ -34,7 +34,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="sri-KY-ccG" customClass="CustomCollectionViewCell" customModule="ResponsiveApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="155"/>
+                                        <rect key="frame" x="87" y="0.0" width="169" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="169" height="155"/>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvR-ld-TFs" customClass="UnderlinedLabel" customModule="ResponsiveApp" customModuleProvider="target">
-                                                    <rect key="frame" x="48.5" y="115" width="72.5" height="20"/>
+                                                    <rect key="frame" x="48.333333333333336" y="115" width="72.333333333333314" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,8 +84,8 @@
                         <constraints>
                             <constraint firstItem="NcR-Nb-MmZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ky8-It-8kU"/>
                             <constraint firstItem="NcR-Nb-MmZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="VK3-qY-Uhd"/>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wmV-dT-x0E"/>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yLW-XZ-p4Q"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wmV-dT-x0E"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="yLW-XZ-p4Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
