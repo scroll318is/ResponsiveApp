@@ -56,7 +56,7 @@
 		9F437D1220234E3A00E4E823 = {
 			isa = PBXGroup;
 			children = (
-				9F437D3720234EFA00E4E823 /* ExternalFiles */,
+				9F437D3020234E7F00E4E823 /* .gitignore */,
 				9F437D1D20234E3A00E4E823 /* ResponsiveApp */,
 				9F437D1C20234E3A00E4E823 /* Products */,
 			);
@@ -129,14 +129,6 @@
 				9F437D3820234F5A00E4E823 /* HomeViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9F437D3720234EFA00E4E823 /* ExternalFiles */ = {
-			isa = PBXGroup;
-			children = (
-				9F437D3020234E7F00E4E823 /* .gitignore */,
-			);
-			path = ExternalFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
