@@ -13,6 +13,19 @@ class HomeViewController: UIViewController {
     // MARK: - Constants
     private let kCellId = "Cell"
     private let kInitialSegmentSelectedIdnex = 0
+    private let kCollectionViewMargin = 10.0 as CGFloat
+    private let kAspectRatio = 16.0/9.0 as CGFloat
+    private let kFontSizePlusPadding = 23.0 as CGFloat
+    
+    private var numberOfCellsPerRow:CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 3.0
+        } else if UIApplication.shared.statusBarOrientation == .landscapeLeft ||
+            UIApplication.shared.statusBarOrientation == .landscapeRight {
+            return 3.0
+        }
+        return 2.0
+    }
     
     // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -54,6 +67,14 @@ class HomeViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        flowLayout.invalidateLayout()
     }
 
     // MARK: - Helpers
@@ -102,7 +123,8 @@ extension HomeViewController: UICollectionViewDataSource {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return currentCategory?.games.count ?? 0
     }
     
@@ -111,6 +133,14 @@ extension HomeViewController: UICollectionViewDataSource {
         let game = currentCategory!.games[indexPath.item]
         cell.configure(game: game)
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = (collectionView.bounds.size.width - kCollectionViewMargin * (numberOfCellsPerRow+1)) / numberOfCellsPerRow
+        return CGSize(width: size, height: size / kAspectRatio + kFontSizePlusPadding)
     }
 }
 
