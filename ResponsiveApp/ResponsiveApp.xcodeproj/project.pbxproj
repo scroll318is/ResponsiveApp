@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E4CD762202601D000CC6FA7 /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4CD761202601D000CC6FA7 /* WKViewController.swift */; };
 		9F437D1F20234E3A00E4E823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D1E20234E3A00E4E823 /* AppDelegate.swift */; };
 		9F437D2420234E3A00E4E823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F437D2220234E3A00E4E823 /* Main.storyboard */; };
 		9F437D2620234E3A00E4E823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F437D2520234E3A00E4E823 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E4CD761202601D000CC6FA7 /* WKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
 		9F437D1B20234E3A00E4E823 /* ResponsiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponsiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F437D1E20234E3A00E4E823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F437D2320234E3A00E4E823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9F437D3820234F5A00E4E823 /* HomeViewController.swift */,
+				6E4CD761202601D000CC6FA7 /* WKViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E4CD762202601D000CC6FA7 /* WKViewController.swift in Sources */,
 				9F437D49202490C600E4E823 /* CustomCollectionViewCell.swift in Sources */,
 				9F437D1F20234E3A00E4E823 /* AppDelegate.swift in Sources */,
 				9F437D3F20236CFE00E4E823 /* Feed.swift in Sources */,

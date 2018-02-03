@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Constants
     private let kCellId = "Cell"
+    private let kSegueToWKViewController = "WKSegueID"
     private let kInitialSegmentSelectedIdnex = 0
     private let kCollectionViewMargin = 10.0 as CGFloat
     private let kAspectRatio = 16.0/9.0 as CGFloat
@@ -75,6 +76,17 @@ class HomeViewController: UIViewController {
             return
         }
         flowLayout.invalidateLayout()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kSegueToWKViewController {
+            if let destinationViewController = segue.destination as? WKViewController,
+               let gameCellIndex = collectionView.indexPathsForSelectedItems?.first,
+               let game = currentCategory?.games[gameCellIndex.item],
+               let url = EndPoints.getGameUrl(gameCode: game.gameCode) {
+                destinationViewController.inject(url: url)
+            }
+        }
     }
 
     // MARK: - Helpers
