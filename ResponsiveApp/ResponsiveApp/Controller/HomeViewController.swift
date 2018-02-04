@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = NSLocalizedString("Home", comment: "Home screen title")
         NetworkCommunicationManager.shared.fetchFeed(completionSuccess: { [weak self] feed in
             self?.feed = feed
         }) { error in
@@ -91,6 +91,7 @@ class HomeViewController: UIViewController {
                let game = currentCategory?.games[gameCellIndex.item],
                let url = EndPoints.getGameUrl(gameCode: game.gameCode) {
                 destinationViewController.inject(url: url)
+                destinationViewController.title = game.name
             }
         }
     }

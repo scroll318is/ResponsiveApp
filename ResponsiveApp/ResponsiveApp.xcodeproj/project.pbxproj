@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E4CD762202601D000CC6FA7 /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4CD761202601D000CC6FA7 /* WKViewController.swift */; };
+		6EFEAA8D20276C2D007FA44C /* WebViewTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFEAA8C20276C2D007FA44C /* WebViewTutorialViewController.swift */; };
 		9F437D1F20234E3A00E4E823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D1E20234E3A00E4E823 /* AppDelegate.swift */; };
 		9F437D2420234E3A00E4E823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F437D2220234E3A00E4E823 /* Main.storyboard */; };
 		9F437D2620234E3A00E4E823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F437D2520234E3A00E4E823 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		6E4CD761202601D000CC6FA7 /* WKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
+		6EFEAA8C20276C2D007FA44C /* WebViewTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTutorialViewController.swift; sourceTree = "<group>"; };
 		9F437D1B20234E3A00E4E823 /* ResponsiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponsiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F437D1E20234E3A00E4E823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F437D2320234E3A00E4E823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,8 +111,8 @@
 				9F437D3C20236B8C00E4E823 /* Category.swift */,
 				9F437D3A2023693000E4E823 /* Game.swift */,
 				9F437D422023713400E4E823 /* EndPoints.swift */,
-				9F437D4020236DFD00E4E823 /* NetworkCommunicationManager.swift */,
 				9F437D442024868F00E4E823 /* ImageCache.swift */,
+				9F437D4020236DFD00E4E823 /* NetworkCommunicationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 			children = (
 				9F437D3820234F5A00E4E823 /* HomeViewController.swift */,
 				6E4CD761202601D000CC6FA7 /* WKViewController.swift */,
+				6EFEAA8C20276C2D007FA44C /* WebViewTutorialViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				9F437D432023713400E4E823 /* EndPoints.swift in Sources */,
 				9F437D3920234F5A00E4E823 /* HomeViewController.swift in Sources */,
 				9F437D3D20236B8C00E4E823 /* Category.swift in Sources */,
+				6EFEAA8D20276C2D007FA44C /* WebViewTutorialViewController.swift in Sources */,
 				9F437D472024903400E4E823 /* UnderlinedLabel.swift in Sources */,
 				9F437D4120236DFD00E4E823 /* NetworkCommunicationManager.swift in Sources */,
 			);

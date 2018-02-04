@@ -65,11 +65,44 @@ class WKViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-    // MARK: - Actions
-    @objc private func onLeftHandSidePan(_ sender: UIScreenEdgePanGestureRecognizer) {
+    private func showTutorial() {
+        let tutorialViewController = storyboard!.instantiateViewController(withIdentifier: "WebViewTutorialViewController") as! WebViewTutorialViewController
+        tutorialViewController.delegate = self
+        navigationController?.present(tutorialViewController, animated: false, completion:nil)
+    }
+    
+    private func popBack() {
         if navigationController?.isNavigationBarHidden ?? false {
             navigationController?.popViewController(animated: true)
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func onLeftHandSidePan(_ sender: UIScreenEdgePanGestureRecognizer) {
+        popBack()
+    }
+    
+    @IBAction func onSwipeUpGesture(_ sender: UISwipeGestureRecognizer) {
+        if !(navigationController?.isNavigationBarHidden ?? true) {
+            UIView.transition(with: view,
+                              duration: TimeInterval(UINavigationControllerHideShowBarDuration),
+                              options: .curveEaseOut,
+                              animations:
+            { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(true, animated: true)
+            }, completion: { [weak self] finished in
+                if finished {
+                    self?.showTutorial()
+                }
+            })
+        }
+    }
+}
+
+// MARK: - WebViewTutorialViewControllerDelegate
+extension WKViewController: WebViewTutorialViewControllerDelegate {
+    func onSwipeFromLeft() {
+        popBack()
     }
 }
 
@@ -79,6 +112,5 @@ extension WKViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
-
 
 

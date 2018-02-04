@@ -105,11 +105,13 @@
                 <swipeGestureRecognizer direction="right" id="hiU-7e-dCh">
                     <connections>
                         <action selector="onSwipe:" destination="BYZ-38-t0r" id="cAL-2A-VHD"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="OSS-1P-p8w"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="LTi-8e-Fl6">
                     <connections>
                         <action selector="onSwipe:" destination="BYZ-38-t0r" id="Xur-N8-B7z"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="wMo-dN-cPZ"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -118,24 +120,109 @@
         <!--View Controller-->
         <scene sceneID="bIz-43-OgJ">
             <objects>
-                <viewController id="Swa-ij-G9S" customClass="WKViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="Swa-ij-G9S" customClass="WKViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lmH-I5-LaY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="V8c-Ra-J1g"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zUx-mn-Dag" appends="YES" id="vls-V8-LlA"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="cBy-90-8ZE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbd-ep-pWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="zUx-mn-Dag">
+                    <connections>
+                        <action selector="onSwipeUpGesture:" destination="Swa-ij-G9S" id="E4C-LP-Fep"/>
+                        <outlet property="delegate" destination="Swa-ij-G9S" id="wUy-Hi-IIx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1804" y="132"/>
+        </scene>
+        <!--Web View Tutorial View Controller-->
+        <scene sceneID="hh2-fX-QQV">
+            <objects>
+                <viewController storyboardIdentifier="WebViewTutorialViewController" modalPresentationStyle="overCurrentContext" id="Khv-Fx-thk" customClass="WebViewTutorialViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pOP-9c-OhN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe from left to go back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzB-ex-DJr">
+                                <rect key="frame" x="84.000000000000014" y="123.99999999999999" width="246.33333333333337" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co3-gT-CzN">
+                                <rect key="frame" x="197.66666666666666" y="158" width="19.333333333333343" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👈🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-35-Lxn">
+                                <rect key="frame" x="0.0" y="338" width="54" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="37W-9n-CYE"/>
+                                    <constraint firstAttribute="width" constant="54" id="CY7-IY-COl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to dismiss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpG-EL-dJp">
+                                <rect key="frame" x="140" y="193" width="134.66666666666663" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49573613556338031" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="MzB-ex-DJr" firstAttribute="top" secondItem="OkD-vY-DUv" secondAttribute="top" constant="104" id="6pd-1d-GCH"/>
+                            <constraint firstItem="VMK-35-Lxn" firstAttribute="centerY" secondItem="pOP-9c-OhN" secondAttribute="centerY" id="G9b-fJ-oge"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VMK-35-Lxn" secondAttribute="trailing" constant="20" symbolic="YES" id="IkJ-im-rZv"/>
+                            <constraint firstItem="co3-gT-CzN" firstAttribute="top" secondItem="MzB-ex-DJr" secondAttribute="bottom" constant="8" id="LUX-W2-Y6d"/>
+                            <constraint firstItem="MzB-ex-DJr" firstAttribute="centerX" secondItem="pOP-9c-OhN" secondAttribute="centerX" id="PgE-X1-4JZ"/>
+                            <constraint firstItem="co3-gT-CzN" firstAttribute="centerX" secondItem="MzB-ex-DJr" secondAttribute="centerX" id="Qw5-VT-eIG"/>
+                            <constraint firstItem="LpG-EL-dJp" firstAttribute="centerX" secondItem="MzB-ex-DJr" secondAttribute="centerX" id="UWL-yJ-xQk"/>
+                            <constraint firstItem="VMK-35-Lxn" firstAttribute="leading" secondItem="OkD-vY-DUv" secondAttribute="leading" id="djw-Uz-mjD"/>
+                            <constraint firstItem="LpG-EL-dJp" firstAttribute="top" secondItem="co3-gT-CzN" secondAttribute="bottom" constant="8" id="z20-vh-w4B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OkD-vY-DUv"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="UDm-Z2-xJm" appends="YES" id="o7k-NG-2SX"/>
+                            <outletCollection property="gestureRecognizers" destination="2il-3F-leS" appends="YES" id="BPY-8t-Rr8"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="imageLeadingConstraint" destination="djw-Uz-mjD" id="Zol-2o-3zk"/>
+                        <outlet property="imageView" destination="VMK-35-Lxn" id="lLY-Iu-tnW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6d-ou-rbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UDm-Z2-xJm">
+                    <connections>
+                        <action selector="onBackgroundTap:" destination="Khv-Fx-thk" id="xO7-wu-EWJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="2il-3F-leS">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="onSwipeFromLeft:" destination="Khv-Fx-thk" id="bfJ-0O-xMN"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2611.594202898551" y="122.28260869565219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i5c-Xm-5jW">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="hks-tM-2X5" sceneMemberID="viewController">
+                <navigationController id="hks-tM-2X5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="JDJ-q9-p2o">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
