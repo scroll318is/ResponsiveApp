@@ -44,7 +44,11 @@ class HomeViewController: UIViewController {
     }
     private var currentCategory:GameCategory? {
         didSet {
-            collectionView.reloadData()
+            if currentCategory != nil {
+                let range = Range(uncheckedBounds: (0, collectionView.numberOfSections))
+                let indexSet = IndexSet(integersIn: range)
+                collectionView.reloadSections(indexSet)
+            }
         }
     }
 
@@ -78,6 +82,7 @@ class HomeViewController: UIViewController {
         flowLayout.invalidateLayout()
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kSegueToWKViewController {
             if let destinationViewController = segue.destination as? WKViewController,
@@ -127,9 +132,27 @@ class HomeViewController: UIViewController {
             currentCategory = feed.categories[segmentControl!.selectedSegmentIndex]
         }
     }
+    
+    @IBAction func onSwipe(_ sender: UISwipeGestureRecognizer) {
+        guard let feed = feed, let selectedIndex = segmentControl?.selectedSegmentIndex else { return }
+        switch sender.direction {
+        case .left:
+            if selectedIndex < feed.categories.count-1 {
+                segmentControl?.selectedSegmentIndex = selectedIndex + 1
+                onSegmentControlValueChange()
+            }
+        case .right:
+            if selectedIndex > 0 {
+                segmentControl?.selectedSegmentIndex = selectedIndex - 1
+                onSegmentControlValueChange()
+            }
+        default:
+            break
+        }
+    }
 }
 
-// MARK: CollectionView DataSource
+// MARK: - CollectionView DataSource
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

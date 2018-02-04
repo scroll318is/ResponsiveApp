@@ -32,12 +32,11 @@ class WKViewController: UIViewController {
     private func setUpWebView() {
         let userContentController = WKUserContentController();
         userContentController.add(self, name: "iOS");
-        let jScript = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" +
-        "head.appendChild(meta);";
-        let wkUScript = WKUserScript(source: jScript, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        var scriptContent = "var meta = document.createElement('meta');"
+        scriptContent += "meta.name='viewport';"
+        scriptContent += "meta.content='width=device-width';"
+        scriptContent += "document.getElementsByTagName('head')[0].appendChild(meta);"
+        let wkUScript = WKUserScript(source: scriptContent, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         userContentController.addUserScript(wkUScript)
         let configuration = WKWebViewConfiguration();
         configuration.userContentController = userContentController;
@@ -52,9 +51,9 @@ class WKViewController: UIViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         var constraints:[NSLayoutConstraint] = []
         constraints.append(webView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor))
-        constraints.append(webView.rightAnchor.constraint(equalTo: self.view.rightAnchor))
+        constraints.append(webView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor))
         constraints.append(webView.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor))
-        constraints.append(webView.leftAnchor.constraint(equalTo: self.view.leftAnchor))
+        constraints.append(webView.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor))
         NSLayoutConstraint.activate(constraints)
     }
     
