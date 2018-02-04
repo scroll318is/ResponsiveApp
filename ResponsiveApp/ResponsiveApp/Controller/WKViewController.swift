@@ -19,8 +19,9 @@ class WKViewController: UIViewController {
         super.viewDidLoad()
         setUpWebView()
         applyConstraintsToWebView()
-        let request = URLRequest(url: url)
+        let request = URLRequest(url:url)
         webView.load(request)
+        webView.scrollView.isScrollEnabled = false
     }
     
     // MARK: - Public Interface
@@ -30,39 +31,27 @@ class WKViewController: UIViewController {
     
     // MARK: - Helpers
     private func setUpWebView() {
-        let userContentController = WKUserContentController();
-        userContentController.add(self, name: "iOS");
-        var scriptContent = "var meta = document.createElement('meta');"
-        scriptContent += "meta.name='viewport';"
-        scriptContent += "meta.content='width=device-width';"
-        scriptContent += "document.getElementsByTagName('head')[0].appendChild(meta);"
-        let wkUScript = WKUserScript(source: scriptContent, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        userContentController.addUserScript(wkUScript)
-        let configuration = WKWebViewConfiguration();
-        configuration.userContentController = userContentController;
-
-        webView = WKWebView(frame: .zero, configuration: configuration)
-        webView.backgroundColor = .red
+        webView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
         webView.navigationDelegate = self
+        webView.contentMode = .scaleToFill
         self.view.addSubview(webView)
     }
     
     private func applyConstraintsToWebView() {
         webView.translatesAutoresizingMaskIntoConstraints = false
         var constraints:[NSLayoutConstraint] = []
-        constraints.append(webView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor))
-        constraints.append(webView.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor))
-        constraints.append(webView.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor))
-        constraints.append(webView.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor))
+        constraints.append(webView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor))
+        constraints.append(webView.rightAnchor.constraint(equalTo: self.view.rightAnchor))
+        constraints.append(webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor))
+        constraints.append(webView.leftAnchor.constraint(equalTo: self.view.leftAnchor))
         NSLayoutConstraint.activate(constraints)
     }
-    
 }
 
 // MARK: - WKNavigationDelegate
 extension WKViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print(webView.url?.absoluteString)
+        print(webView.url?.absoluteString as Any)
     }
 }
 

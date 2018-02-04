@@ -15,18 +15,9 @@ class HomeViewController: UIViewController {
     private let kSegueToWKViewController = "WKSegueID"
     private let kInitialSegmentSelectedIdnex = 0
     private let kCollectionViewMargin = 10.0 as CGFloat
+    private let kSegmentControlTopMargin = 16 as CGFloat
     private let kAspectRatio = 16.0/9.0 as CGFloat
     private let kFontSizePlusPadding = 23.0 as CGFloat
-    
-    private var numberOfCellsPerRow:CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return 3.0
-        } else if UIApplication.shared.statusBarOrientation == .landscapeLeft ||
-            UIApplication.shared.statusBarOrientation == .landscapeRight {
-            return 3.0
-        }
-        return 2.0
-    }
     
     // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -37,11 +28,11 @@ class HomeViewController: UIViewController {
         didSet {
             if let feed = feed {
                 loadSegmentControl()
-                applySegmentControlConstraints()
                 currentCategory = feed.categories[segmentControl!.selectedSegmentIndex]
             }
         }
     }
+    
     private var currentCategory:GameCategory? {
         didSet {
             if currentCategory != nil {
@@ -52,6 +43,16 @@ class HomeViewController: UIViewController {
         }
     }
 
+    private var numberOfCellsPerRow:CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 3.0
+        } else if UIApplication.shared.statusBarOrientation == .landscapeLeft ||
+            UIApplication.shared.statusBarOrientation == .landscapeRight {
+            return 3.0
+        }
+        return 2.0
+    }
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,13 +105,17 @@ class HomeViewController: UIViewController {
         segmentControl?.tintColor = .purple
         segmentControl?.selectedSegmentIndex = kInitialSegmentSelectedIdnex
         self.view.addSubview(segmentControl!)
-        applySegmentControlConstraints()
+        applySegmentControlConstraintsForiOS11()
     }
     
-    private func applySegmentControlConstraints() {
+    private func applySegmentControlConstraintsForiOS11() {
         segmentControl?.translatesAutoresizingMaskIntoConstraints = false
         var constraints:[NSLayoutConstraint] = []
-        constraints.append(segmentControl!.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor))
+        if #available(iOS 11.0, *) {
+            constraints.append(segmentControl!.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: kSegmentControlTopMargin))
+        } else {
+            constraints.append(segmentControl!.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: kSegmentControlTopMargin))
+        }
         constraints.append(segmentControl!.leftAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leftAnchor))
         constraints.append(segmentControl!.rightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.rightAnchor))
         NSLayoutConstraint.activate(constraints)

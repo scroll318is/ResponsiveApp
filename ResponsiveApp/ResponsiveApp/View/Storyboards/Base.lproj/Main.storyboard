@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hks-tM-2X5">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NcR-Nb-MmZ">
-                                <rect key="frame" x="0.0" y="138" width="375" height="640"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="npJ-Cs-APE">
                                     <size key="itemSize" width="169" height="155"/>
@@ -72,7 +72,7 @@
                                             <outlet property="imageView" destination="1tA-cO-JOE" id="6vR-vJ-838"/>
                                             <outlet property="name" destination="FD1-FC-FqS" id="ydx-dF-19p"/>
                                             <outlet property="playNow" destination="DvR-ld-TFs" id="PlC-nv-FSU"/>
-                                            <segue destination="Swa-ij-G9S" kind="push" identifier="WKSegueID" id="gwS-Zj-1pc"/>
+                                            <segue destination="Swa-ij-G9S" kind="show" identifier="WKSegueID" id="Ool-j5-yJJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -85,12 +85,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ky8-It-8kU"/>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="VK3-qY-Uhd"/>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wmV-dT-x0E"/>
-                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yLW-XZ-p4Q"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="bottom" secondItem="nBR-8m-vnj" secondAttribute="bottom" id="Ky8-It-8kU"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="top" secondItem="nBR-8m-vnj" secondAttribute="top" constant="60" id="VK3-qY-Uhd"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="leading" secondItem="nBR-8m-vnj" secondAttribute="leading" id="wmV-dT-x0E"/>
+                            <constraint firstItem="NcR-Nb-MmZ" firstAttribute="trailing" secondItem="nBR-8m-vnj" secondAttribute="trailing" id="yLW-XZ-p4Q"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="nBR-8m-vnj"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hiU-7e-dCh" appends="YES" id="4Lm-um-Ch9"/>
                             <outletCollection property="gestureRecognizers" destination="LTi-8e-Fl6" appends="YES" id="pGt-om-Wsu"/>
@@ -113,31 +113,32 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="844" y="132.26600985221674"/>
+            <point key="canvasLocation" x="970" y="132"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bIz-43-OgJ">
             <objects>
                 <viewController id="Swa-ij-G9S" customClass="WKViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lmH-I5-LaY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="TIl-n5-hXS"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="V8c-Ra-J1g"/>
                     </view>
                     <navigationItem key="navigationItem" id="cBy-90-8ZE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbd-ep-pWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623.2" y="131.52709359605913"/>
+            <point key="canvasLocation" x="1804" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i5c-Xm-5jW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hks-tM-2X5" sceneMemberID="viewController">
+                <navigationController id="hks-tM-2X5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JDJ-q9-p2o">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="JDJ-q9-p2o">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
