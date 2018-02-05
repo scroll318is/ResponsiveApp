@@ -16,6 +16,10 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
     func startLoading() {
         guard loadingViewController == nil else { return }
         loadingViewController = storyboard?.instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController

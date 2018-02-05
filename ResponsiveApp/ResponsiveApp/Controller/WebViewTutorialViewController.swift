@@ -31,6 +31,10 @@ class WebViewTutorialViewController: UIViewController {
         animateImage()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: - Animation
     private func animateImage() {
         imageLeadingConstraint.constant = self.view.bounds.width / 2 - imageView.bounds.width

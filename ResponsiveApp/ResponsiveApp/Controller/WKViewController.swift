@@ -13,6 +13,11 @@ class WKViewController: BaseViewController {
     
     private var webView:WKWebView!
     private var url:URL!
+    private var isStatusBarHidden:Bool = false {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -28,6 +33,10 @@ class WKViewController: BaseViewController {
         if navigationController?.isNavigationBarHidden ?? false {
             navigationController?.setNavigationBarHidden(false, animated: false)
         }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return isStatusBarHidden
     }
     
     // MARK: - Public Interface
@@ -94,6 +103,7 @@ class WKViewController: BaseViewController {
                               options: .curveEaseOut,
                               animations:
             { [weak self] in
+                self?.isStatusBarHidden = true
                 self?.navigationController?.setNavigationBarHidden(true, animated: true)
             }, completion: { [weak self] finished in
                 if finished {
