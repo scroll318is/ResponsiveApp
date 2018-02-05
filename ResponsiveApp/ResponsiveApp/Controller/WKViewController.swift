@@ -66,9 +66,13 @@ class WKViewController: UIViewController {
     }
     
     private func showTutorial() {
-        let tutorialViewController = storyboard!.instantiateViewController(withIdentifier: "WebViewTutorialViewController") as! WebViewTutorialViewController
-        tutorialViewController.delegate = self
-        navigationController?.present(tutorialViewController, animated: false, completion:nil)
+        let key = "WVTS"
+        if !UserDefaults.standard.bool(forKey: key) {
+            let tutorialViewController = storyboard!.instantiateViewController(withIdentifier: "WebViewTutorialViewController") as! WebViewTutorialViewController
+            tutorialViewController.delegate = self
+            navigationController?.present(tutorialViewController, animated: false, completion:nil)
+            UserDefaults.standard.set(true, forKey: key)
+        }
     }
     
     private func popBack() {

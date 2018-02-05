@@ -85,7 +85,6 @@ class NetworkCommunicationManager {
                 completion(image, error)
             }
         }
-        print(url.absoluteURL)
         let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
             guard error == nil else {
                 _completion(nil, error)
@@ -93,8 +92,7 @@ class NetworkCommunicationManager {
             }
             
             if let data = data,
-                let image = UIImage(data:data)
-            {
+               let image = UIImage(data:data) {
                 _completion(image, nil)
             } else {
                 _completion(nil, NetworkError.noDataError)
