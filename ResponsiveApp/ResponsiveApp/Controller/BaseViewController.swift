@@ -11,10 +11,6 @@ import UIKit
 class BaseViewController: UIViewController {
     
     private var loadingViewController:LoadingViewController?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override var prefersStatusBarHidden: Bool {
         return false

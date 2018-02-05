@@ -12,20 +12,13 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var playNow: UnderlinedLabel!
     
     private var game:Game!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        playNow.isHidden = true
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         self.name.text = ""
         self.imageView.image = nil
-        self.playNow.isHidden = true
     }
     
     public func configure(game:Game) {

@@ -78,12 +78,10 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
-            return
-        }
-        flowLayout.invalidateLayout()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print(#function)
+        invalidateCollectionViewLayout()
     }
     
     // MARK: - Navigation
@@ -100,6 +98,13 @@ class HomeViewController: BaseViewController {
     }
 
     // MARK: - Helpers
+    private func invalidateCollectionViewLayout() {
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        flowLayout.invalidateLayout()
+    }
+    
     private func loadSegmentControl()  {
         let names = getCategoryNames()
         guard names.count > 0 else { return }

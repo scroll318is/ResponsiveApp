@@ -9,16 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="ResponsiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,12 +44,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvR-ld-TFs" customClass="UnderlinedLabel" customModule="ResponsiveApp" customModuleProvider="target">
-                                                    <rect key="frame" x="48.333333333333336" y="115" width="72.333333333333314" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -62,16 +51,13 @@
                                             <constraint firstAttribute="bottom" secondItem="1tA-cO-JOE" secondAttribute="bottom" id="5Lc-V1-Vbr"/>
                                             <constraint firstItem="FD1-FC-FqS" firstAttribute="top" secondItem="sri-KY-ccG" secondAttribute="top" id="CSc-3Z-Zfz"/>
                                             <constraint firstItem="1tA-cO-JOE" firstAttribute="top" secondItem="FD1-FC-FqS" secondAttribute="bottom" constant="6" id="O6f-sg-cWB"/>
-                                            <constraint firstItem="DvR-ld-TFs" firstAttribute="centerX" secondItem="1tA-cO-JOE" secondAttribute="centerX" id="Pt8-kE-sj1"/>
                                             <constraint firstAttribute="trailing" secondItem="1tA-cO-JOE" secondAttribute="trailing" id="RGp-Ce-NNc"/>
                                             <constraint firstAttribute="trailing" secondItem="FD1-FC-FqS" secondAttribute="trailing" id="cpx-ZD-snC"/>
-                                            <constraint firstAttribute="bottom" secondItem="DvR-ld-TFs" secondAttribute="bottom" constant="20" id="swg-ZI-FIs"/>
                                             <constraint firstItem="FD1-FC-FqS" firstAttribute="leading" secondItem="sri-KY-ccG" secondAttribute="leading" id="v1F-bS-723"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="1tA-cO-JOE" id="6vR-vJ-838"/>
                                             <outlet property="name" destination="FD1-FC-FqS" id="ydx-dF-19p"/>
-                                            <outlet property="playNow" destination="DvR-ld-TFs" id="PlC-nv-FSU"/>
                                             <segue destination="Swa-ij-G9S" kind="show" identifier="WKSegueID" id="Ool-j5-yJJ"/>
                                         </connections>
                                     </collectionViewCell>

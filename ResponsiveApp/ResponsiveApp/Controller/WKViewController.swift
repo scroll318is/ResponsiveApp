@@ -11,6 +11,7 @@ import WebKit
 
 class WKViewController: BaseViewController {
     
+    // MARK: - Properties
     private var webView:WKWebView!
     private var url:URL!
     private var isStatusBarHidden:Bool = false {
@@ -97,7 +98,8 @@ class WKViewController: BaseViewController {
     }
     
     @IBAction func onSwipeUpGesture(_ sender: UISwipeGestureRecognizer) {
-        if !(navigationController?.isNavigationBarHidden ?? true) {
+        guard let navigationController = navigationController else { return }
+        if !(navigationController.isNavigationBarHidden) {
             UIView.transition(with: view,
                               duration: TimeInterval(UINavigationControllerHideShowBarDuration),
                               options: .curveEaseOut,
@@ -106,9 +108,7 @@ class WKViewController: BaseViewController {
                 self?.isStatusBarHidden = true
                 self?.navigationController?.setNavigationBarHidden(true, animated: true)
             }, completion: { [weak self] finished in
-                if finished {
-                    self?.showTutorial()
-                }
+                self?.showTutorial()
             })
         }
     }
