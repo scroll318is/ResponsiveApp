@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WKViewController: UIViewController {
+class WKViewController: BaseViewController {
     
     private var webView:WKWebView!
     private var url:URL!
@@ -39,6 +39,7 @@ class WKViewController: UIViewController {
     private func setUpWebView() {
         webView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
         webView.contentMode = .scaleToFill
+        webView.navigationDelegate = self
         webView.scrollView.isScrollEnabled = false
         self.view.addSubview(webView)
     }
@@ -100,6 +101,17 @@ class WKViewController: UIViewController {
                 }
             })
         }
+    }
+}
+
+// MARK: - WKNavigationDelegate
+extension WKViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        startLoading()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        finishLoading()
     }
 }
 

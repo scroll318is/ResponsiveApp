@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     // MARK: - Constants
     private let kCellId = "Cell"
@@ -57,9 +57,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Home", comment: "Home screen title")
+        startLoading()
         NetworkCommunicationManager.shared.fetchFeed(completionSuccess: { [weak self] feed in
+            self?.finishLoading()
             self?.feed = feed
-        }) { error in
+        }) { [weak self] error in
+            self?.finishLoading()
             if let error = error as? NetworkError {
                 switch error {
                 case .noDataError:

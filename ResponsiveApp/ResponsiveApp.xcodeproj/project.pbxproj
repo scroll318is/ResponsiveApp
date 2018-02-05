@@ -23,6 +23,8 @@
 		9F437D452024868F00E4E823 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D442024868F00E4E823 /* ImageCache.swift */; };
 		9F437D472024903400E4E823 /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D462024903400E4E823 /* UnderlinedLabel.swift */; };
 		9F437D49202490C600E4E823 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F437D48202490C600E4E823 /* CustomCollectionViewCell.swift */; };
+		9F5F0F1020284307001ECC53 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0F0F20284307001ECC53 /* LoadingViewController.swift */; };
+		9F5F0F122028444F001ECC53 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0F112028444F001ECC53 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		9F437D442024868F00E4E823 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		9F437D462024903400E4E823 /* UnderlinedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedLabel.swift; sourceTree = "<group>"; };
 		9F437D48202490C600E4E823 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F5F0F0F20284307001ECC53 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		9F5F0F112028444F001ECC53 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +134,11 @@
 		9F437D3620234ED000E4E823 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9F5F0F112028444F001ECC53 /* BaseViewController.swift */,
 				9F437D3820234F5A00E4E823 /* HomeViewController.swift */,
 				6E4CD761202601D000CC6FA7 /* WKViewController.swift */,
 				6EFEAA8C20276C2D007FA44C /* WebViewTutorialViewController.swift */,
+				9F5F0F0F20284307001ECC53 /* LoadingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,12 +221,14 @@
 				9F437D1F20234E3A00E4E823 /* AppDelegate.swift in Sources */,
 				9F437D3F20236CFE00E4E823 /* Feed.swift in Sources */,
 				9F437D452024868F00E4E823 /* ImageCache.swift in Sources */,
+				9F5F0F122028444F001ECC53 /* BaseViewController.swift in Sources */,
 				9F437D3B2023693000E4E823 /* Game.swift in Sources */,
 				9F437D432023713400E4E823 /* EndPoints.swift in Sources */,
 				9F437D3920234F5A00E4E823 /* HomeViewController.swift in Sources */,
 				9F437D3D20236B8C00E4E823 /* Category.swift in Sources */,
 				6EFEAA8D20276C2D007FA44C /* WebViewTutorialViewController.swift in Sources */,
 				9F437D472024903400E4E823 /* UnderlinedLabel.swift in Sources */,
+				9F5F0F1020284307001ECC53 /* LoadingViewController.swift in Sources */,
 				9F437D4120236DFD00E4E823 /* NetworkCommunicationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
